@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="icon" href="Portfolio Image.jpeg" type="image/jpeg">
+    <title>Vu Nguyen</title>
+    <style>
+        /* CSS styles for your page */
+        body {
+            transition: background-color 0.5s; /* Add a smooth transition effect */
+        }
+
+        /* Define background colors for different scroll positions */
+        .bg-color-1 {
+            background-color: #FCCA1A;
+        }
+
+        .bg-color-2 {
+            background-color: #FE6D73;
+        }
+
+        .bg-color-3 {
+            background-color: #2EC4B6;
+        }
+
+        .bg-color-4 {
+            background-color: #FCCA1A;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <div class="sidebar-icon">
+          <img src="Vu Nguyen.png" alt="My Icon">
+        </div>
+        <ul class="nav">
+            <li><a href="#hello">Hello</a></li>
+            <li><a href="#game-projects">Game Projects</a></li>
+            <li><a href="#featured-artwork">Featured Artwork</a></li>
+            <li><a href="#about-me">About Me</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+      <section id="hello" class="segment hello">
+        <div class="section-content">
+            <div class="section-text">
+                <h1>Hello!</h1>
+                <p> I'm Vu Nguyen! I'm a 3D Artist, Tech Artist, and Game Developer! 
+                    I'm currently working on getting my B.S in Computational Media from
+                    Georgia Tech. I've been doing 3D art for a while now and through Tech's 
+                    Game Development Club, I've had the opportunity to work on 8 games, lead
+                    several 3D art workshops, and grow my skills as an artist and game developer!
+                </p>
+            </div>
+            <div>
+                <img src="Main Image.jpg" alt="My Icon" class="hello-image">
+            </div>
+        </div>
+    </section>
+        <section id="game-projects" class="segment game-projects">
+          <div class="section-content">
+            <div class="section-text">
+                <h1>Game Projects Section</h1>
+                <p>I've worked on several VGdev Games. You can find them here! 
+                    <a href="https://www.gtvgdev.com/games"> VGdev!</a>  
+                </p>
+            </div>
+            <div class="video-link">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/40jOTE71CHE" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-artwork" class="segment featured-artwork">
+        <div class="section-content">
+            <div class="section-text">
+                <h1>Featured Artworks Section</h1>
+                <p>Take a look at my 3D art!! <a href="https://www.artstation.com/vuxn">Artsation</a>></p>
+            </div>
+            <div>
+                <img src="Portfolio.png" alt="My Icon" class="hello-image">
+            </div>
+    </div>
+    </section>
+
+    <section id="about-me" class="segment about-me">
+        <div class="section-content">
+            <div class="section-text">
+                <h1>About Me Section</h1>
+                <p>Email: v.x.nguyen231@gmail.com <br></p>
+            </div>
+        </div>
+    </section>
+    
+    </div>
+
+<script>
+        // Define an array of background colors for different scroll positions
+        const backgroundColors = [
+            'bg-color-1',
+            'bg-color-2',
+            'bg-color-3',
+            'bg-color-4'
+        ];
+
+        // Function to change the background color based on scroll position
+        function changeBackgroundColor() {
+        const scrollPosition = window.scrollY;
+        const threshold = 850; // Adjust this value to change when the background color changes
+
+        // Calculate the index of the color based on scroll position
+        const colorIndex = Math.min(
+            Math.floor(scrollPosition / threshold),
+            backgroundColors.length - 1
+        );
+
+        // Remove previous background color classes
+        document.body.classList.remove(...backgroundColors);
+
+        // Add the appropriate background color class
+        document.body.classList.add(backgroundColors[colorIndex]);
+    }
+
+        // Add an event listener to call the function on scroll
+        window.addEventListener('scroll', changeBackgroundColor);
+
+        // Call the function initially to set the initial background color class
+        changeBackgroundColor();
+    </script>
+</body>
+</html>
